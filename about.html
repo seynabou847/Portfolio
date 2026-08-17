@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À propos — Seynabou Ndiaye</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          accent: '#d7f42f',
+          ink: '#0b0b0d',
+          card: '#141416',
+        },
+        fontFamily: {
+          display: ['Archivo Black', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  h1, h2, .font-display { font-family: 'Archivo Black', sans-serif; }
+</style>
+</head>
+<body class="bg-ink text-white">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-ink/80 backdrop-blur border-b border-white/5">
+    <div class="flex items-center justify-between px-4 sm:px-6 md:px-12 h-16 md:h-20">
+      <a href="index.html" class="text-base sm:text-lg font-display tracking-wide">Seynabou Ndiaye</a>
+      <div class="hidden md:flex items-center gap-10 text-sm font-medium text-gray-300">
+        <a href="index.html#projets" class="hover:text-accent transition-colors">Projets</a>
+        <a href="about.html" class="text-accent">À propos</a>
+        <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
+      </div>
+      <button id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false" class="md:hidden w-10 h-10 flex items-center justify-center rounded-full bg-white/5">
+        <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5 hidden"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden flex-col gap-1 px-4 pb-4 text-sm font-medium text-gray-300">
+      <a href="index.html#projets" class="block py-3 px-2 rounded-lg hover:bg-white/5 hover:text-accent transition-colors">Projets</a>
+      <a href="about.html" class="block py-3 px-2 rounded-lg bg-white/5 text-accent">À propos</a>
+      <a href="#contact" class="block py-3 px-2 rounded-lg hover:bg-white/5 hover:text-accent transition-colors">Contact</a>
+    </div>
+  </nav>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const iconOpen = document.getElementById('iconOpen');
+    const iconClose = document.getElementById('iconClose');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', String(!isOpen));
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+  <!-- À propos -->
+  <section class="px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-24">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 sm:gap-10">
+      <h1 class="font-display text-2xl sm:text-3xl md:text-4xl uppercase">À propos de moi</h1>
+      <div>
+        <p class="text-base sm:text-lg font-semibold">
+          Je suis développeuse front-end basée à Dakar, avec une formation
+          en génie informatique.
+        </p>
+        <p class="mt-4 text-gray-400 leading-relaxed">
+          Je suis développeuse front-end basée à Dakar et je recherche des
+          opportunités passionnantes. Avec une formation en génie
+          informatique, j'accorde une grande importance à l'accessibilité
+          dans mes développements. Passionnée et curieuse, j'aime relever
+          des défis et résoudre des problèmes.
+        </p>
+        <p class="mt-4 text-gray-400 leading-relaxed">
+          En ce moment, j'explore React.js, Laravel et je m'intéresse aussi
+          un peu au design. En dehors du code, j'aime jouer au football,
+          pratiquer et la photographie. Je continue d'apprendre chaque
+          jour pour améliorer mes compétences.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="#" download class="inline-flex items-center gap-2 bg-accent text-ink font-semibold text-sm px-6 py-3 rounded-full hover:brightness-95 transition">
+            TÉLÉCHARGER CV
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="w-4 h-4"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.25h4.5V24h-4.5V8.25zM8.5 8.25h4.31v2.15h.06c.6-1.14 2.08-2.34 4.28-2.34 4.58 0 5.42 3.02 5.42 6.94V24h-4.5v-7.14c0-1.7-.03-3.9-2.37-3.9-2.37 0-2.73 1.85-2.73 3.77V24h-4.5V8.25z"/></svg>
+          </a>
+          <a href="#" aria-label="GitHub" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.08 1.84 2.83 1.31 3.52 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .3z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto mt-10 sm:mt-14">
+      <div class="rounded-2xl overflow-hidden bg-card aspect-[16/10] sm:aspect-[16/8]">
+        <img src="images/portrait.jpeg" alt="Portrait de Seynabou Ndiaye" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- Compétences -->
+  <section class="px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-24 border-t border-white/5">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 sm:gap-10">
+      <h2 class="font-display text-2xl sm:text-3xl md:text-4xl uppercase">Mes compétences</h2>
+      <div>
+        <p class="text-gray-400 leading-relaxed">
+          Je suis toujours à la recherche de nouvelles compétences à
+          développer. J'aime relever de nouveaux défis, apprendre des
+          technologies variées et enrichir continuellement mon savoir-faire
+          pour proposer des solutions modernes et efficaces.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="px-5 py-2.5 rounded-full border border-white/15 text-sm font-semibold">HTML</span>
+          <span class="px-5 py-2.5 rounded-full border border-white/15 text-sm font-semibold">CSS</span>
+          <span class="px-5 py-2.5 rounded-full border border-white/15 text-sm font-semibold">JAVASCRIPT</span>
+          <span class="px-5 py-2.5 rounded-full border border-white/15 text-sm font-semibold">Laravel</span>
+          <span class="px-5 py-2.5 rounded-full border border-white/15 text-sm font-semibold">BOOTSTRAP</span>
+          <span class="px-5 py-2.5 rounded-full border border-white/15 text-sm font-semibold">TAILWIND CSS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expérience -->
+  <section class="px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-24 border-t border-white/5">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 sm:gap-10">
+      <h2 class="font-display text-2xl sm:text-3xl md:text-4xl uppercase">Mon expérience</h2>
+      <div class="space-y-10">
+
+        <div>
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="font-display text-lg uppercase">Développeuse web junior</h3>
+            <span class="text-xs text-gray-500">Fevrier 2026 — Présente</span>
+          </div>
+          <p class="mt-3 text-gray-400 leading-relaxed">
+            Titulaire d'une <strong>Licence en gestion des entreprises</strong>, j'ai également suivi une formation pratique en plusieurs mois en développement web qui m'a permis d'acquérir des compétences en conception et développement de site web.
+            J'aime transformer une idée en une solution concrète, fonctionnelle et agréable à utiliser.
+          </p>
+        </div>
+
+        <div class="pt-8 border-t border-white/10">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="font-display text-lg uppercase">Stagiaire Front-End</h3>
+            <span class="text-xs text-gray-500">Aout 2026 — Sep 2026</span>
+          </div>
+          <div class="text-accent text-sm font-semibold mt-1">Defar-sci</div>
+          <p class="mt-3 text-gray-400 leading-relaxed">
+            Defar-sci est une entreprise dynamique spécialisée dans le
+            développement de solutions digitales sur mesure pour les PME
+            et startups.
+            Au cours de mon stage chez DEFAR Sci, j'ai renforcé mes compétences en développement web à travers une approche pratique et orientée projet.
+            <br><br>
+            Technologies étudiées :
+          </p>
+          <ul class="mt-2 list-disc list-inside text-gray-400 leading-relaxed">
+            <li>HTML / CSS</li>
+            <li>Tailwind CSS</li>
+            <li>Laravel</li>
+            <li>PHP</li>
+            <li>MySQL</li>
+            <li>Git / GitHub</li>
+          </ul>
+          <p class="mt-3 text-gray-400 leading-relaxed">
+            Le stage se terminera par la conception et la réalisation d'un projet en équipe, permettant de mettre en pratique les compétences acquises tout au long de la formation.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-24 border-t border-white/5">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 sm:gap-12">
+      <div>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl uppercase">Entrons en contact</h2>
+        <p class="mt-4 text-gray-400 break-words">
+          Dites bonjour à
+          <a href="mailto:Zeynabndiaye66@gmail.com" class="text-accent underline underline-offset-4">Zeynabndiaye66@gmail.com</a>
+        </p>
+        <p class="mt-1 text-gray-400">
+          Pour en savoir plus, voici mon
+          <a href="#" class="text-accent underline underline-offset-4">CV</a>
+        </p>
+        <div class="mt-6 flex gap-4">
+          <a href="#" aria-label="LinkedIn" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.25h4.5V24h-4.5V8.25zM8.5 8.25h4.31v2.15h.06c.6-1.14 2.08-2.34 4.28-2.34 4.58 0 5.42 3.02 5.42 6.94V24h-4.5v-7.14c0-1.7-.03-3.9-2.37-3.9-2.37 0-2.73 1.85-2.73 3.77V24h-4.5V8.25z"/></svg>
+          </a>
+          <a href="#" aria-label="GitHub" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.08 1.84 2.83 1.31 3.52 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .3z"/></svg>
+          </a>
+          <a href="#" aria-label="X" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M18.24 2H21l-6.5 7.43L22 22h-6.19l-4.84-6.35L5.4 22H2.6l6.96-7.95L2 2h6.34l4.36 5.8L18.24 2zm-1.08 18h1.72L7.9 4h-1.8l11.06 16z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <form class="space-y-5">
+        <div>
+          <label class="block text-sm text-gray-400 mb-1">Nom complet</label>
+          <input type="text" placeholder="John Doe" class="w-full bg-card border border-white/10 rounded-lg px-4 py-3 text-sm placeholder-gray-500 focus:outline-none focus:border-accent">
+        </div>
+        <div>
+          <label class="block text-sm text-gray-400 mb-1">Email</label>
+          <input type="email" placeholder="vous@exemple.com" class="w-full bg-card border border-white/10 rounded-lg px-4 py-3 text-sm placeholder-gray-500 focus:outline-none focus:border-accent">
+        </div>
+        <div>
+          <label class="block text-sm text-gray-400 mb-1">Sujet</label>
+          <input type="text" placeholder="Sujet de votre message" class="w-full bg-card border border-white/10 rounded-lg px-4 py-3 text-sm placeholder-gray-500 focus:outline-none focus:border-accent">
+        </div>
+        <div>
+          <label class="block text-sm text-gray-400 mb-1">Message</label>
+          <textarea rows="5" placeholder="Votre message..." class="w-full bg-card border border-white/10 rounded-lg px-4 py-3 text-sm placeholder-gray-500 focus:outline-none focus:border-accent"></textarea>
+        </div>
+        <button type="submit" class="w-full sm:w-auto bg-accent text-ink font-semibold text-sm px-6 py-3 rounded-full hover:brightness-95 transition">
+          ENVOYER
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="px-4 sm:px-6 md:px-12 py-8 border-t border-white/5 text-center text-xs text-gray-500">
+    © 2026 Seynabou Ndiaye
+  </footer>
+
+</body>
+</html>
